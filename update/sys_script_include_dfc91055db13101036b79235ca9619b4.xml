@@ -20,24 +20,32 @@ NeeditUtils.prototype = {
 				'46d44a23a9fe19810012d100cca80666', 
 				'5137153cc611227c000bbd1bd8cd2005'
 			],
-			'u_what_needed': ['legal1', 'legal2', 'hr1', 'hr2', 'other', 'facilities1', 'facilities2'],
+			'u_what_needed': null,
 			state: [13,13,13,3],
 			u_when_needed: null
 		};
 
 		for (var x=0; x<num; x++) {
+			var rec_data = {};
 			var rec = new GlideRecord(gs.getCurrentScopeName()+'_needit');
-			rec.setValue('active', true);
 			rec.initialize();
+			rec.setValue('active', true);
 			for (var fld in data) {
-				if (fld!='u_when_needed') {
-					var idx = Math.floor(Math.random()*data[fld].length);
-					rec.setValue(fld, data[fld][idx]);											
-				} else {
-					var when = new GlideDateTime();
-					when.addDaysLocalTime( Math.floor(Math.random()*30) + 1);
-					rec.setValue('u_when_needed', when);					
+				switch (fld) {
+					case 'u_when_needed':
+						var when = new GlideDateTime();
+						when.addDaysLocalTime( Math.floor(Math.random()*30) + 1);
+						rec_data[fld] = when;
+						break;
+					case 'u_what_needed':
+						var o = (x % 3) + 1;
+						rec_data[fld] = (o==3 ? 'other' : rec_data['u_request_type']+o.toString());
+						break;
+					default:
+						var idx = Math.floor(Math.random()*data[fld].length);
+						rec_data[fld] = data[fld][idx];
 				}
+				rec.setValue(fld, rec_data[fld]);
 			}
 			var sys_id = rec.insert();
 		}
@@ -49,13 +57,13 @@ NeeditUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-09-15 19:39:03</sys_created_on>
         <sys_id>dfc91055db13101036b79235ca9619b4</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>NeeditUtils</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_script_include_dfc91055db13101036b79235ca9619b4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-09-15 20:43:08</sys_updated_on>
+        <sys_updated_on>2020-10-19 19:56:00</sys_updated_on>
     </sys_script_include>
 </record_update>

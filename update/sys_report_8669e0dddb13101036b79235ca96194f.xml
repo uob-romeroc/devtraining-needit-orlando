@@ -2,7 +2,9 @@
     <sys_report action="INSERT_OR_UPDATE">
         <additional_groupby/>
         <aggregate>COUNT</aggregate>
+        <aggregation_source>no_override</aggregation_source>
         <allow_data_label_overlap>false</allow_data_label_overlap>
+        <apply_alias>false</apply_alias>
         <axis_max_color display_value="UI14 Blue Light">b0d449b3d7332100fa6c0c12ce610383</axis_max_color>
         <axis_min_color display_value="White">65b303c7a9fe3dba00629aff95ee3597</axis_min_color>
         <bar_unstack>false</bar_unstack>
@@ -51,7 +53,7 @@
         <group/>
         <import_table/>
         <interval>year</interval>
-        <is_published>false</is_published>
+        <is_published>true</is_published>
         <is_real_time>false</is_real_time>
         <is_scheduled>false</is_scheduled>
         <legend_align_columns>true</legend_align_columns>
@@ -72,9 +74,9 @@
         <others>true</others>
         <page_hdrftr/>
         <pivot_expanded>true</pivot_expanded>
-        <report_drilldown display_value="Weekly Active Requests by Requested for">835cac9ddb13101036b79235ca961957</report_drilldown>
+        <report_drilldown display_value="Monthly Active Requests by Requested for">0609abccdb00201036b79235ca9619ba</report_drilldown>
         <report_source display_value="Active NeedIt Requests (NeedIt)">1ed82c9ddb13101036b79235ca961921</report_source>
-        <roles>x_58872_needit.needit_user</roles>
+        <roles>x_58872_needit.needit_user,public</roles>
         <row/>
         <sc_groupby_item_id/>
         <sc_groupby_variable_id/>
@@ -102,25 +104,25 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-09-15 20:47:00</sys_created_on>
         <sys_id>8669e0dddb13101036b79235ca96194f</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>Active NeedIt Requests by Type</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_report_8669e0dddb13101036b79235ca96194f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-09-15 21:05:54</sys_updated_on>
+        <sys_updated_on>2020-10-19 20:23:36</sys_updated_on>
         <table>x_58872_needit_needit</table>
         <title>Active NeedIt Requests by Type</title>
         <title_horizontal_alignment>center</title_horizontal_alignment>
-        <title_vertical_alignment>bottom</title_vertical_alignment>
+        <title_vertical_alignment>top</title_vertical_alignment>
         <to/>
         <trend_field/>
         <type>donut</type>
         <upper_limit/>
         <use_color_heatmap>false</use_color_heatmap>
         <use_null_in_trend>false</use_null_in_trend>
-        <user>group</user>
+        <user>GLOBAL</user>
         <x_axis_allow_decimals>true</x_axis_allow_decimals>
         <x_axis_display_grid>false</x_axis_display_grid>
         <x_axis_grid_color display_value="LightGrey">65b30308a9fe3dba01ebaa03e87e7cd3</x_axis_grid_color>
